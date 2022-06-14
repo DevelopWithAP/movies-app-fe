@@ -2,19 +2,24 @@ import { useQuery } from 'react-query';
 import { fetchStatus } from 'api/health';
 import { MyMoviesLogo } from 'components/Icons';
 
+import Layout from './components/Layout/Layout';
 import styles from './App.module.css';
 
 function App(): JSX.Element {
   const { data: healthy } = useQuery('status', fetchStatus);
 
   return (
-    <div className={styles.app}>
-      <header className={styles.appHeader}>
-        <MyMoviesLogo className={styles.icon} />
-        <p>My Movies</p>
-        <p>API Status: {healthy ? 'Is running' : 'Something is wrong!'}</p>
-      </header>
-    </div>
+    <Layout
+      footer={<>Footer</>}
+      header={
+        <>
+          <MyMoviesLogo className={styles.icon} />
+          Header
+        </>
+      }
+    >
+      <p>API Status: {healthy ? 'is running' : 'something is wrong!'}</p>
+    </Layout>
   );
 }
 
