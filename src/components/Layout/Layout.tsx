@@ -21,11 +21,11 @@ type Props = {
 
 const Layout = ({ header, footer, children }: Props) => {
   return (
-    <div className={styles.layout}>
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>{footer}</footer>
-    </div>
+    <>
+      {header}
+      <main className={styles.xMargin}>{children}</main>
+      <footer className={styles.xMargin}>{footer}</footer>
+    </>
   );
 };
 
