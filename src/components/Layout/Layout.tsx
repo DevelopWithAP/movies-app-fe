@@ -24,7 +24,9 @@ const Layout = ({ header, footer, children }: Props) => {
     <>
       {header}
       <main className={styles.xMargin}>{children}</main>
-      <footer className={styles.xMargin}>{footer}</footer>
+      {/* <footer className={styles.xMargin}>{footer}</footer>
+       */}
+      {footer}
     </>
   );
 };

@@ -15,4 +15,5 @@ code {
 :root {
   --shadow-header: gainsboro;
   --header-index: 2;
+  --secondary: #61dafb;
 }
