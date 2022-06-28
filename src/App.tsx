@@ -9,7 +9,7 @@ function App(): JSX.Element {
 
   return (
     <Layout footer={<Footer />} header={<Header />}>
-      <p>API Status: {healthy ? 'Is running' : 'Something is wrong!'}</p>
+      <p style={{ height: '150vh' }}>API Status: {healthy ? 'Is running' : 'Something is wrong!'}</p>
     </Layout>
   );
 }
