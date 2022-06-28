@@ -19,7 +19,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-const Layout = ({ header, footer, children }: Props) => {
+const Layout = ({ header, footer, children }: Props): JSX.Element => {
   return (
     <>
       {header}
