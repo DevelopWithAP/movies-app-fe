@@ -5,14 +5,14 @@ import HamburgerButton from 'components/HamburgerButton/HamburgerButton';
 import styles from './Header.module.css';
 
 const Header = (): JSX.Element => {
-  const [oldState, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   return (
     <header className={styles.header}>
       <MyMoviesLogo className={styles.headerIcon} />
       <HamburgerButton
-        isActive={oldState}
+        isActive={isActive}
         onClick={() => {
-          setIsActive((oldState) => !oldState);
+          setIsActive((isActive) => !isActive);
         }}
       />
     </header>
