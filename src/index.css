@@ -16,5 +16,5 @@ code {
   --shadow-header: gainsboro;
   --header-index: 2;
   --secondary: #61dafb;
-  --hamburger-btn-elements: #000000;
+  --hamburger-button-global: #000000;
 }

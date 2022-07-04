@@ -1,16 +1,18 @@
 import styles from './HamburgerButton.module.css';
 
-type HamburgerProps = {
+type HamburgerButtonProps = {
   isActive: boolean;
   onClick?: () => void;
 };
 
-const HamburgerButton = ({ isActive, onClick }: HamburgerProps): JSX.Element => {
+const addMultipleClassNames = (classNames: string[]): string => classNames.join(' ');
+
+const HamburgerButton = ({ isActive, onClick }: HamburgerButtonProps): JSX.Element => {
   return (
-    <div className={isActive ? styles.hamburger : styles.hamburger} onClick={onClick}>
-      <span className={styles.bar}></span>
-      <span className={styles.bar}></span>
-      <span className={styles.bar}></span>
+    <div className={isActive ? addMultipleClassNames([styles.hamburger, styles.active]) : styles.hamburger} onClick={onClick}>
+      <div className={styles.bar}></div>
+      <div className={styles.bar}></div>
+      <div className={styles.bar}></div>
     </div>
   );
 };
