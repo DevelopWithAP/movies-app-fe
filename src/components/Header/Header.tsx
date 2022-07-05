@@ -27,15 +27,13 @@ export const Header = (): JSX.Element => {
   return (
     <header className={styles.header}>
       <MyMoviesLogo className={styles.headerIcon} />
-      <>
-        {matches && <HamburgerButton isActive={sidebarActive} onClick={toggleActive} />}
+      {matches && <HamburgerButton isActive={sidebarActive} onClick={toggleActive} />}
 
-        {sidebarActive && (
-          <Sidebar onBackDropClick={closeSidebar}>
-            <div>Hello</div>
-          </Sidebar>
-        )}
-      </>
+      {sidebarActive && (
+        <Sidebar onBackDropClick={closeSidebar}>
+          <div>Hello</div>
+        </Sidebar>
+      )}
     </header>
   );
 };
