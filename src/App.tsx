@@ -6,10 +6,9 @@ import Footer from 'components/Footer/Footer';
 
 function App(): JSX.Element {
   const { data: healthy } = useQuery('status', fetchStatus);
-
   return (
     <Layout footer={<Footer />} header={<Header />}>
-      <p style={{ height: '150vh' }}>API Status: {healthy ? 'Is running' : 'Something is wrong!'}</p>
+      <p style={{ height: '150vh' }}>API Status: {healthy ? 'Is Running' : 'Something is wrong'}</p>
     </Layout>
   );
 }

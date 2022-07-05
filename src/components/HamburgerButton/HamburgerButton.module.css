@@ -5,7 +5,7 @@
 }
 
 .bar {
-    background-color: var(--hamburger-button-global);
+    background-color: var(--black);
     display: block;
     height: 3px;
     margin: 5px auto;
@@ -24,3 +24,7 @@
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+
+
+
+
