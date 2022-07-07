@@ -1,18 +1,14 @@
 import { useQuery } from 'react-query';
-import { fetchStatus } from 'api/health';
-import { MyMoviesLogo } from 'components/Icons';
+import { getMovies } from 'api/movies/movies';
+import Spinner from 'components/Spinner/Spinner';
 
 import styles from './MoviesListContainer.module.css';
 
 const MoviesListContainer = (): JSX.Element => {
-  const { data: healthy } = useQuery('status', fetchStatus);
-  return (
-    <>
-      <MyMoviesLogo className={styles.headerIcon} />
-      <h4>My Movies</h4>
-      <p>API Status: {healthy ? 'Is Running' : 'Something is wrong'}</p>
-    </>
-  );
+  const { data } = useQuery('movies', getMovies);
+  const JsonToString: string = JSON.stringify(data);
+
+  return <div className={styles.moviesListContainer}>{!data ? <Spinner /> : JsonToString}</div>;
 };
 
 export default MoviesListContainer;
