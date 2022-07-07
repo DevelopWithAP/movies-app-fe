@@ -29,11 +29,11 @@ export const Header = (): JSX.Element => {
     <header className={styles.header}>
       <MyMoviesLogo className={styles.headerIcon} />
       <>
-        {matches && <HamburgerButton isActive={sidebarActive} onClick={toggleActive} />}
+        {matches ? <HamburgerButton isActive={sidebarActive} onClick={toggleActive} /> : <NavigationLink name="Movies" to="/movies" />}
 
         {sidebarActive && (
           <Sidebar onBackDropClick={closeSidebar}>
-            <NavigationLink name="movies" to="/movies" />
+            <NavigationLink name="Movies" to="/movies" />
           </Sidebar>
         )}
       </>
