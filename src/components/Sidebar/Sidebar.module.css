@@ -10,7 +10,7 @@
     width: 200px;
 }
 
-.takeOverSidebarWrapper {
+.backdrop {
     background-color: grey;
     display: flex;
     flex-direction: row-reverse;
