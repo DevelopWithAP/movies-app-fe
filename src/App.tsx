@@ -1,15 +1,16 @@
-import { useQuery } from 'react-query';
-import { fetchStatus } from 'api/health';
 import Header from 'components/Header/Header';
 import Layout from 'components/Layout/Layout';
 import Footer from 'components/Footer/Footer';
+import { BrowserRouter } from 'react-router-dom';
+import MainRouter from 'navigation/MainRouter';
 
 function App(): JSX.Element {
-  const { data: healthy } = useQuery('status', fetchStatus);
   return (
-    <Layout footer={<Footer />} header={<Header />}>
-      <p style={{ height: '150vh' }}>API Status: {healthy ? 'Is Running' : 'Something is wrong'}</p>
-    </Layout>
+    <BrowserRouter>
+      <Layout footer={<Footer />} header={<Header />}>
+        <MainRouter />
+      </Layout>
+    </BrowserRouter>
   );
 }
 

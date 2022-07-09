@@ -3,6 +3,7 @@ import { MyMoviesLogo } from 'components/Icons';
 import HamburgerButton from 'components/HamburgerButton/HamburgerButton';
 import Sidebar from 'components/Sidebar/Sidebar';
 import useMediaQuery from 'hooks/useMediaQuery';
+import NavigationLink from 'components/NavigationLink/NavigationLink';
 
 import styles from './Header.module.css';
 
@@ -27,13 +28,15 @@ export const Header = (): JSX.Element => {
   return (
     <header className={styles.header}>
       <MyMoviesLogo className={styles.headerIcon} />
-      {matches && <HamburgerButton isActive={sidebarActive} onClick={toggleActive} />}
+      <>
+        {matches ? <HamburgerButton isActive={sidebarActive} onClick={toggleActive} /> : <NavigationLink name="Movies" to="/movies" />}
 
-      {sidebarActive && (
-        <Sidebar onBackDropClick={closeSidebar}>
-          <div>Hello</div>
-        </Sidebar>
-      )}
+        {sidebarActive && (
+          <Sidebar onBackDropClick={closeSidebar}>
+            <NavigationLink name="Movies" to="/movies" />
+          </Sidebar>
+        )}
+      </>
     </header>
   );
 };

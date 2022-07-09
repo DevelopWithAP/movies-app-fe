@@ -1,11 +1,10 @@
 import styles from './HamburgerButton.module.css';
+import { addMultipleClassNames } from '../../utilities/addMultipleClassNames';
 
 type HamburgerButtonProps = {
   isActive: boolean;
   onClick?: () => void;
 };
-
-const addMultipleClassNames = (classNames: string[]): string => classNames.join(' ');
 
 const HamburgerButton = ({ isActive, onClick }: HamburgerButtonProps): JSX.Element => {
   return (
