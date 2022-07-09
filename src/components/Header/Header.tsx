@@ -33,7 +33,7 @@ export const Header = (): JSX.Element => {
 
         {sidebarActive && (
           <Sidebar onBackDropClick={closeSidebar}>
-            <NavigationLink name="movies" to="/movies" />
+            <NavigationLink name="Movies" to="/movies" />
           </Sidebar>
         )}
       </>

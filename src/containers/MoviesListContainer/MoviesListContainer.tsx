@@ -2,6 +2,7 @@ import { useQuery } from 'react-query';
 import { getMovies } from 'api/movies/movies';
 import Spinner from 'components/Spinner/Spinner';
 
+
 import styles from './MoviesListContainer.module.css';
 
 const MoviesListContainer = (): JSX.Element => {
