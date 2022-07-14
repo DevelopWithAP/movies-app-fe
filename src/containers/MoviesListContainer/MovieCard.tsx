@@ -1,12 +1,19 @@
-import { Movie } from '../../api/movies/types';
+import { StarIcon } from 'components/Icons';
 
-// import styles from './MovieCard.module.css';
+import { Movie } from '../../api/movies/types';
+import styles from './MovieCard.module.css';
 
 const MovieCard = ({ posterPath, releaseDate, title, voteAverage }: Movie): JSX.Element => {
   return (
-    <div>
+    <div className={styles.card}>
       <img alt={`Poster Path for ${title}`} src={posterPath} />
-      <span>{releaseDate}</span> <span>{voteAverage}</span>
+      <div className={styles.movieInfoDiv}>
+        <span className={styles.voteAverage}>
+          {' '}
+          <StarIcon style={{ width: '15px', height: '15px', padding: '0 10px' }} /> {voteAverage}
+        </span>
+        <p className={styles.releaseDate}>{releaseDate}</p>
+      </div>
     </div>
   );
 };

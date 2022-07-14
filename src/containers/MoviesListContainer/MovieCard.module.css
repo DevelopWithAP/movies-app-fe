@@ -1,4 +1,27 @@
-.layout {
+.card {
+    border: 1px solid gainsboro;
+    border-radius: 5px;
     display: flex;
-    
+    flex-direction: column;
+    margin: 0 20px 30px 0;
+    max-width: 300px;
+    min-width: 150px;
+}
+
+.movieInfoDiv {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    justify-content: space-between;
+    padding: 5px 12px;
+}
+
+.voteAverage {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.releaseDate {
+    padding: 15px;
 }
