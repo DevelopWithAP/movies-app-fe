@@ -9,7 +9,6 @@ const MovieCard = ({ posterPath, releaseDate, title, voteAverage }: Movie): JSX.
       <img alt={`Poster Path for ${title}`} src={posterPath} />
       <div className={styles.movieInfoDiv}>
         <span className={styles.voteAverage}>
-          {' '}
           <StarIcon style={{ width: '15px', height: '15px', padding: '0 10px' }} /> {voteAverage}
         </span>
         <p className={styles.releaseDate}>{releaseDate}</p>
