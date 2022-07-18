@@ -7,13 +7,12 @@ import styles from './MoviesListContainer.module.css';
 
 const MoviesListContainer = (): JSX.Element => {
   const { data, isFetching, isLoading } = useQuery('movies', getMovies);
-  const JsonToString: string = JSON.stringify(data);
+  const dataToString: string = JSON.stringify(data);
 
   return (
     <div className={styles.moviesListContainer}>
-      {data?.movies.length && <MovieCard {...data?.movies[0]} />}
-
-      {isFetching || isLoading ? <Spinner /> : JsonToString}
+      {data?.movies && <MovieCard {...data?.movies[2]} />}
+      {isFetching || isLoading ? <Spinner /> : dataToString}
     </div>
   );
 };
