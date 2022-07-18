@@ -11,7 +11,7 @@ const MoviesListContainer = (): JSX.Element => {
 
   return (
     <div className={styles.moviesListContainer}>
-      {data?.movies.length && <MovieCard {...data?.movies[0]} />}
+      {data?.movies.length && <MovieCard {...data?.movies[2]} />}
 
       {isFetching || isLoading ? <Spinner /> : JsonToString}
     </div>
