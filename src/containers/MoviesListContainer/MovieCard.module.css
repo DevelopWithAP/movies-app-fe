@@ -29,3 +29,9 @@
 .movieTitle {
     padding: 15px;
 }
+
+.starIcon {
+    height: 15px;
+    padding: 0 10px;
+    width: 15px;
+}
