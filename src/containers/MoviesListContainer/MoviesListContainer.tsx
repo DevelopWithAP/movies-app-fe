@@ -7,7 +7,6 @@ import styles from './MoviesListContainer.module.css';
 
 const MoviesListContainer = (): JSX.Element => {
   const { data, isFetching, isLoading } = useQuery('movies', getMovies);
-  console.log(typeof data?.movies);
 
   const showAllMovies = () => {
     return data?.movies.map((movie) => <MovieCard key={movie.id} {...movie} />);
