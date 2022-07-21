@@ -9,11 +9,11 @@ const MoviesListContainer = (): JSX.Element => {
   const { data, isFetching, isLoading } = useQuery('movies', getMovies);
   console.log(typeof data?.movies);
 
-  const showAllMovies = () => {
+  const renderAllMovies = () => {
     return data?.movies.map((movie) => <MovieCard key={movie.id} {...movie} />);
   };
 
-  return <div className={styles.moviesListContainer}>{isLoading || isFetching ? <Spinner /> : showAllMovies()}</div>;
+  return <div className={styles.moviesListContainer}>{isLoading || isFetching ? <Spinner /> : renderAllMovies()}</div>;
 };
 
 export default MoviesListContainer;
