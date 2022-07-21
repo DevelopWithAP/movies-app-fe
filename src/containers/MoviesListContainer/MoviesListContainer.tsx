@@ -8,7 +8,11 @@ import styles from './MoviesListContainer.module.css';
 const MoviesListContainer = (): JSX.Element => {
   const { data, isFetching, isLoading } = useQuery('movies', getMovies);
 
-  return <div className={styles.moviesListContainer}>{isLoading || isFetching ? <Spinner /> : data?.movies && <MovieCard {...data?.movies[2]} />}</div>;
+  const renderAllMovies = () => {
+    return data?.movies.map((movie) => <MovieCard key={movie.id} {...movie} />);
+  };
+
+  return <div className={styles.moviesListContainer}>{isLoading || isFetching ? <Spinner /> : renderAllMovies()}</div>;
 };
 
 export default MoviesListContainer;
