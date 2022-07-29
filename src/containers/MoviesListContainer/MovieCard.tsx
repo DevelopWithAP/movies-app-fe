@@ -1,12 +1,23 @@
 import { StarIcon } from 'components/Icons';
+import { RoutesKey } from 'navigation/routes';
+import { generatePath } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import { Movie } from '../../api/movies/types';
 import styles from './MovieCard.module.css';
 
-const MovieCard = ({ posterPath, releaseDate, title, voteAverage }: Movie): JSX.Element => {
+const MovieCard = ({ posterPath, releaseDate, title, voteAverage, movieId }: Movie): JSX.Element => {
+  /**
+   * Need to:
+   * pass <movieId> down to info component
+   * create link to page showing movie with <movieId>
+   */
+  const moviePath: string = generatePath(RoutesKey.Movie, { id: movieId });
   return (
     <div className={styles.card}>
-      <img alt={title} src={posterPath} />
+      <Link to={moviePath}>
+        <img alt={title} className={styles.movieImage} src={posterPath} />
+      </Link>
       <div className={styles.movieInfoDiv}>
         <span className={styles.voteAverage}>
           <StarIcon className={styles.starIcon} /> {voteAverage}
