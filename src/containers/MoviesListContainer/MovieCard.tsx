@@ -7,11 +7,6 @@ import { Movie } from '../../api/movies/types';
 import styles from './MovieCard.module.css';
 
 const MovieCard = ({ posterPath, releaseDate, title, voteAverage, movieId }: Movie): JSX.Element => {
-  /**
-   * Need to:
-   * pass <movieId> down to info component
-   * create link to page showing movie with <movieId>
-   */
   const moviePath: string = generatePath(RoutesKey.Movie, { id: movieId });
   return (
     <div className={styles.card}>

@@ -7,12 +7,6 @@ import { useParams } from 'react-router';
 import styles from './MovieInfoContainer.module.css';
 
 const MovieInfoContainer = (): JSX.Element => {
-  /**
-   * Need to:
-   * receive <movieId> from MovieCard component - react router
-   * fetch movie with <movieId> - useQuery
-   * add styling
-   */
   const params = useParams<'id'>();
 
   const { isFetching, isLoading, data } = useQuery('movie', () => getMovie(params.id as string));
