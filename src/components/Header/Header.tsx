@@ -4,6 +4,7 @@ import HamburgerButton from 'components/HamburgerButton/HamburgerButton';
 import Sidebar from 'components/Sidebar/Sidebar';
 import useMediaQuery from 'hooks/useMediaQuery';
 import NavigationLink from 'components/NavigationLink/NavigationLink';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.css';
 
@@ -27,7 +28,9 @@ export const Header = (): JSX.Element => {
 
   return (
     <header className={styles.header}>
-      <MyMoviesLogo className={styles.headerIcon} />
+      <Link to="/">
+        <MyMoviesLogo className={styles.headerIcon} />
+      </Link>
       <>
         {matches ? <HamburgerButton isActive={sidebarActive} onClick={toggleActive} /> : <NavigationLink name="Movies" to="/movies" />}
 

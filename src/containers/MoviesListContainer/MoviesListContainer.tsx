@@ -9,7 +9,7 @@ const MoviesListContainer = (): JSX.Element => {
   const { data, isFetching, isLoading } = useQuery('movies', getMovies);
 
   const renderAllMovies = () => {
-    return data?.movies.map((movie) => <MovieCard key={movie.id} {...movie} />);
+    return data?.movies.map((movie) => <MovieCard key={movie.movieId} {...movie} />);
   };
 
   return <div className={styles.moviesListContainer}>{isLoading || isFetching ? <Spinner /> : renderAllMovies()}</div>;
