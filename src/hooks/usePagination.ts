@@ -3,8 +3,7 @@ import { useMemo } from 'react';
 const DOTS = '...';
 
 type UsePaginationProps = {
-  totalCount: number;
-  pageSize: number;
+  totalPageCount: number;
   siblingCount?: number;
   currentPage: number;
 };
@@ -14,10 +13,8 @@ const range = (start: number, end: number): number[] => {
   return Array.from({ length }, (_, index) => index + start);
 };
 
-const usePagination = ({ currentPage, pageSize, siblingCount = 1, totalCount }: UsePaginationProps): (string | number)[] | undefined => {
+const usePagination = ({ totalPageCount, siblingCount = 1, currentPage }: UsePaginationProps): (string | number)[] | undefined => {
   const paginationRange = useMemo(() => {
-    const totalPageCount: number = Math.ceil(totalCount / pageSize);
-
     const totalPageNumbers: number = siblingCount + 5;
 
     /**
@@ -80,7 +77,7 @@ const usePagination = ({ currentPage, pageSize, siblingCount = 1, totalCount }: 
 
       return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
     }
-  }, [currentPage, pageSize, siblingCount, totalCount]);
+  }, [totalPageCount, siblingCount, currentPage]);
 
   return paginationRange;
 };
