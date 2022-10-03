@@ -1,7 +1,7 @@
-import usePagination from 'hooks/usePagination';
-import { addMultipleClassNames } from 'utilities/addMultipleClassNames';
+import { useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import RenderNumberedButtons from 'components/RenderNumberedButtons/RenderNumberedButtons';
 
 import styles from './Pagination.module.css';
 
@@ -13,33 +13,13 @@ type PaginationProps = {
   onPreviousClick: () => void;
 };
 
-const Pagination = ({ currentPage, totalPages, onNextClick, onPageClick, onPreviousClick }: PaginationProps): JSX.Element => {
-  const pagination = usePagination({ totalPageCount: totalPages, currentPage });
-
-  const renderNumberedButtons = () =>
-    pagination?.map((item, index) => {
-      const isDots = typeof item === 'string';
-
-      const style = isDots ? styles.paginationPadding : item === currentPage ? addMultipleClassNames([styles.item, styles.active]) : styles.item;
-
-      const handlePageClick = () => {
-        if (typeof item === 'number') {
-          onPageClick(item);
-        }
-      };
-
-      return (
-        <li className={style} key={index}>
-          {isDots ? (
-            item
-          ) : (
-            <button className={styles.button} onClick={handlePageClick}>
-              {item}
-            </button>
-          )}
-        </li>
-      );
-    });
+const Pagination = ({ currentPage, totalPages, onNextClick, onPreviousClick }: PaginationProps): JSX.Element => {
+  const onPageClick = useCallback(
+    (event) => {
+      console.log('You clicked:', event.currentTarget);
+    },
+    [currentPage],
+  );
 
   return (
     <ul className={styles.paginationList}>
@@ -48,8 +28,8 @@ const Pagination = ({ currentPage, totalPages, onNextClick, onPageClick, onPrevi
           <FontAwesomeIcon icon={faArrowCircleLeft} />
         </button>
       </li>
-      {renderNumberedButtons()}
-      <li className={styles.item}>
+      <RenderNumberedButtons currentPage={currentPage} totalPages={totalPages} onPageClick={onPageClick} />
+      <li>
         <button className={styles.button} onClick={onNextClick}>
           <FontAwesomeIcon icon={faArrowCircleRight} />
         </button>

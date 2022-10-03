@@ -1,10 +1,16 @@
-.paginationList {
+.paginationPadding {
     align-items: center;
-    align-self: center;
     display: flex;
     justify-content: center;
-    list-style: none;
-    padding: 0;
+    margin: 5px;
+    width: 28px;
+}
+
+.active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+
 }
 
 .item {
@@ -17,13 +23,6 @@
     margin: 5px;
     min-width: 16px;
     padding: 5px;
-
-}
-
-.item:hover {
-    background-color: var(--secondary);
-    color: var(--white);
-    fill: var(--white);
 }
 
 .button {
