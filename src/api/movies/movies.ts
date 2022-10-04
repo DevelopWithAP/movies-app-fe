@@ -1,8 +1,8 @@
 import { get } from '../shared/methods';
 import { MovieDetailsResponse, MoviesResponse } from './types';
 
-const getMovies = async (page: number): Promise<MoviesResponse> => {
-  const { data } = await get<MoviesResponse>(`movies?page=${page}`);
+const getMovies = async (): Promise<MoviesResponse> => {
+  const { data } = await get<MoviesResponse>(`movies`);
   return data;
 };
 
