@@ -5,6 +5,13 @@
     margin-top: 40px;  
 }
 
+.tempForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+}
+
 @media (min-width: 576px) {
     .moviesListContainer {
         grid-template-columns: repeat(2, 1fr);
