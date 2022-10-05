@@ -2,7 +2,7 @@ import { get } from '../shared/methods';
 import { MovieDetailsResponse, MoviesResponse } from './types';
 
 const getMovies = async (): Promise<MoviesResponse> => {
-  const { data } = await get<MoviesResponse>(`movies?page=1`);
+  const { data } = await get<MoviesResponse>('movies');
   return data;
 };
 
