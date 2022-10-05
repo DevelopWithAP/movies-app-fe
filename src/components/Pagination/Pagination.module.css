@@ -12,8 +12,8 @@
     border: 1px solid var(--grey);
     border-radius: 16px;
     display: flex;
+    height: 16px;
     justify-content: center;
-    line-height: 16px;
     margin: 5px;
     min-width: 16px;
     padding: 5px;
@@ -26,9 +26,25 @@
     fill: var(--white);
 }
 
+.paginationPadding {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    width: 28px;
+}
+
+.active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+
+}
+
 .button {
     background: none;
     border: none;
+	color: inherit;
     cursor: pointer;
     font: inherit;
     height: 100%;
